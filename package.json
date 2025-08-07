@@ -61,5 +61,8 @@
     },
     "engines": {
         "node": ">=12"
+    },
+    "dependencies": {
+        "cbor-x": "^1.6.0"
     }
 }

@@ -135,6 +135,8 @@ Copyright JS Foundation and other contributors, http://js.foundation under [the 
 
 **node-red-node-base64** - *[70-base64.js](parsers/base64)* - Converts a payload to/from base64 encoded format.
 
+**node-red-node-cbor** - *[70-cbor.js](parsers/cbor)* - Converts a payload to/from Concise Binary Object Representation.
+
 **node-red-node-geohash** - *[70-geohash.js](parsers/geohash)* - Converts a lat, lon payload to/from geohash format.
 
 **node-red-node-msgpack** - *[70-msgpack.js](parsers/msgpack)* - Converts a payload to/from msgpack binary packed format.
