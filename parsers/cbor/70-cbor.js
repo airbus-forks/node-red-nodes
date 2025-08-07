@@ -37,9 +37,9 @@ module.exports = function (RED) {
                         RED.util.setMessageProperty(msg, node.property, value);
                         node.send(msg);
                         // update status
-                        var valueLengthAsString = value.length.toString();
-                        var replacedValuesLengthAsString = JSON.stringify(value, replacer).length;
-                        var textValue = `${valueLengthAsString} b->o ${replacedValuesLengthAsString}`;
+                        var valueLength = value.length;
+                        var replacedValueLength = JSON.stringify(value, replacer).length;
+                        var textValue = `${valueLength} b->o ${replacedValueLength}`;
                         node.status({ text: textValue });
                     }
                     catch (e) {
