@@ -36,7 +36,11 @@ module.exports = function (RED) {
                         value = cbor.decode(value);
                         RED.util.setMessageProperty(msg, node.property, value);
                         node.send(msg);
-                        node.status({ text: l + " b->o " + JSON.stringify(value, replacer).length });
+                        // update status
+                        var valueLengthAsString = value.length.toString();
+                        var replacedValuesLengthAsString = JSON.stringify(value, replacer).length;
+                        var textValue = `${valueLengthAsString} b->o ${replacedValuesLengthAsString}`;
+                        node.status({ text: textValue });
                     }
                     catch (e) {
                         node.error(`Bad decode - ${e.message}`, msg);
@@ -48,7 +52,11 @@ module.exports = function (RED) {
                     value = cbor.encode(value);
                     RED.util.setMessageProperty(msg, node.property, value);
                     node.send(msg);
-                    node.status({ text: le + " o->b " + value.length });
+                    // update status
+                    var valueLengthAsString = value.length.toString();
+                    var replacedValuesLengthAsString = JSON.stringify(value, replacer).length;
+                    var textValue = `${valueLengthAsString} b->o ${replacedValuesLengthAsString}`;
+                    node.status({ text: textValue });
                 }
             }
             else { node.warn("No payload found to process"); }
